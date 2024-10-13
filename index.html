@@ -349,6 +349,11 @@
   animation: swimDiagonalLeft 12s infinite linear;
 }
 
+/* Add a class to stop the sperm animations */
+.stop-animations .swimming-sperm {
+  animation-play-state: paused;
+}
+
 /* Keyframes for different movements */
 @keyframes swimRight {
   0% { transform: translateX(0); }
@@ -508,6 +513,17 @@
       const navbar = document.querySelector(".navbar");
       navbar.classList.toggle("active");
     }
+
+    const languageToggle = document.getElementById("language-toggle");
+
+languageToggle.addEventListener('mouseenter', function() {
+  document.body.classList.add('stop-animations');
+});
+
+languageToggle.addEventListener('mouseleave', function() {
+  document.body.classList.remove('stop-animations');
+});
+
   </script>
 
 </body>
