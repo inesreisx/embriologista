@@ -394,29 +394,25 @@
 }
       
 
-/* Ensure the egg stays behind the navbar */
+/* Hide the egg by default */
 .egg {
-  z-index: 10; /* Lower z-index to ensure it's behind the navbar */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  background-image: url('./media/img/happy-egg-embriologista.png'); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translate(-50%, -50%); /* Center the egg */
   display: none;
 }
 
-
-
-/* Responsive styling for smaller screens */
+/* Show the egg only on mobile view */
 @media (max-width: 768px) {
   .egg {
+    display: block;
     width: 100px;
     height: 100px;
     z-index: 10; /* Ensure it stays behind the navbar */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url('./media/img/happy-egg-embriologista.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%); /* Center the egg */
   }
 }
     /* Hide the egg when the navbar is active */
