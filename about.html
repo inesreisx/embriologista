@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Embriologista to be...</title>
+    <meta name="description" content="Passionate about embryology and human reproduction.">
+    <meta property="og:description" content="Passionate about embryology and human reproduction." />
+    <meta property="og:title" content="Embriologista"/>
+    <meta property="og:description" content="Passionate about embryology and human reproduction." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dzQYblBoXbG5wTYixBlUxli5wKgq8PRAZFdVOzR9Mv5OktyRlFF+gp09C4kDjw/7LvT7bPdH4l/1O51z9/Wjgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYBBRRKYL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-CGYBBRRKYL');
+  </script>
+ 
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #dca8a4;
+      background-image: url('https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/website-background.png?v=1728770358471');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Toggle switch styles */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      background-color: #ccc;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .toggle-switch::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle-switch.active {
+      background-color: #6ab9c7;
+    }
+
+    .toggle-switch.active::before {
+      transform: translateX(30px);
+    }
+
+    .flag-icon {
+      font-size: 1.5em;
+    }
+
+    /* Story Container and Slide Styling */
+    .story-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      width: 70vh;
+      margin: 0 auto;
+      top: 80px;
+      overflow: visible;
+    }
+
+    .story-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .story {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-in-out;
+      margin-top: 30px;
+    }
+
+    .story.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .story img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .story h3 {
+      font-size: 2em;
+      margin: 20px 0 10px 0;
+    }
+
+    .story p {
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    /* Navigation Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 1900; /* Ensure arrows are on top */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.arrow-left {
+  left: -80px; /* Adjust positioning */
+}
+
+.arrow-right {
+  right: -80px; /* Adjust positioning */
+}
+
+
+    /* Story Indicators */
+    .story-indicators {
+      position: absolute;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 10;
+      margin-top: 13px;
+    }
+
+    .story-indicator {
+      width: 30px;
+      height: 6px;
+      background-color: white;
+      opacity: 0.5;
+      border-radius: 3px;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .story-indicator.active {
+      opacity: 1;
+    }
+
+    /* Footer Styles */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: white;
+      text-align: left;
+      padding: 15px;
+      z-index: 1000;
+    }
+
+    /* Responsive Styling for Mobile */
+    @media (max-width: 768px) {
+      .story-container {
+        width: 90vw;
+        height: 60vh;
+      }
+
+      .story img {
+        height: 60%;
+        margin-bottom: 20px;
+      }
+
+      /* Adjust arrow positioning for smaller screens */
+      .arrow-left {
+        left: 10px;
+      }
+
+      .arrow-right {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" class="nav-link" data-en="Home" data-pt="Início">Início</a></li>
+      <li><a href="#blog" class="nav-link" data-en="Blog" data-pt="Blog">Blog</a></li>
+      <li class="toggle-container">
+        <span class="flag-icon">🇵🇹</span>
+        <div id="language-toggle" class="toggle-switch" onclick="toggleLanguage()"></div>
+        <span class="flag-icon">🇺🇸</span>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Story Slide Indicators -->
+  <div class="story-indicators" id="storyIndicators"></div>
+
+  <!-- Story Slides Section -->
+  <div class="story-container">
+    <div class="story-slide" id="storySlide">
+      <div class="story active">
+        <h3 data-en="2018-2022" data-pt="2018-2022">2018-2021</h3>
+        <img src="https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/DALL%C2%B7E%202024-10-11%2018.57.01%20-%20Create%20an%20abstract%20underwater%20scene%20canvas%20representing%20the%20concept%20of%20fertilization.%20Illustrate%20elements%20reminiscent%20of%20coral%20reefs%20and%20sea%20flora%20tha.webp?v=1728680583439" alt="Started My Journey">
+        <p data-en="Embarked on my academic journey with a Bachelor's degree in Biology from the University of Évora, where I discovered my passion for reproductive science."
+          data-pt="Iniciei a minha jornada académica com uma licenciatura em Biologia pela Universidade de Évora, onde descobri a minha paixão pela ciência reprodutiva.">Iniciei a minha jornada académica com uma licenciatura em Biologia pela Universidade de Évora, onde descobri a minha paixão pela ciência reprodutiva.</p>
+      </div>
+      <div class="story">
+        <h3 data-en="2021-2022" data-pt="2021-2022">2021-2022</h3>
+        <img src="https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/testing.webp?v=1728680770927" alt="Internship at fertility clinic">
+        <p data-en="Completed an internship at a renowned fertility clinic, where I gained hands-on experience in embryology."
+          data-pt="Completei um estágio em uma renomada clínica de fertilidade, onde adquiri experiência prática em embriologia.">Completei um estágio em uma renomada clínica de fertilidade, onde adquiri experiência prática em embriologia.</p>
+      </div>
+      <div class="story">
+        <h3 data-en="2022-2024" data-pt="2022-2024">2022-2024</h3>
+        <img src="https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/DALL%C2%B7E%202024-10-11%2018.57.01%20-%20Create%20an%20abstract%20underwater%20scene%20canvas%20representing%20the%20concept%20of%20fertilization.%20Illustrate%20elements%20reminiscent%20of%20coral%20reefs%20and%20sea%20flora%20tha.webp?v=1728680583439" alt="Further studies">
+        <p data-en="Pursued further education with a Postgraduate degree in Biochemistry from the Faculdade de Ciências da Universidade de Lisboa."
+          data-pt="Prossegui os meus estudos com uma Pós-graduação em Bioquímica pela Faculdade de Ciências da Universidade de Lisboa.">Prossegui os meus estudos com uma Pós-graduação em Bioquímica pela Faculdade de Ciências da Universidade de Lisboa.</p>
+      </div>
+      <div class="story">
+        <h3 data-en="2023-2024" data-pt="2023-2024">2023-2024</h3>
+        <img src="https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/DALL%C2%B7E%202024-10-11%2018.57.01%20-%20Create%20an%20abstract%20underwater%20scene%20canvas%20representing%20the%20concept%20of%20fertilization.%20Illustrate%20elements%20reminiscent%20of%20coral%20reefs%20and%20sea%20flora%20tha.webp?v=1728680583439" alt="Graduated">
+        <p data-en="Graduated with a degree in biology, specializing in reproductive sciences and laboratory techniques."
+          data-pt="Graduei-me em biologia, com especialização em ciências reprodutivas e técnicas laboratoriais.">Graduei-me em biologia, com especialização em ciências reprodutivas e técnicas laboratoriais.</p>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</div>
+    <div class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">Made with ♥</div>
+
+<script>
+let currentSlide = 0;
+let startX;
+
+function initIndicators() {
+  const totalSlides = document.getElementById('storySlide').children.length;
+  const indicatorsContainer = document.getElementById('storyIndicators');
+  
+  // Create the appropriate number of indicators
+  for (let i = 0; i < totalSlides; i++) {
+    const indicator = document.createElement('div');
+    indicator.classList.add('story-indicator');
+    if (i === 0) indicator.classList.add('active'); // First slide is active
+    indicator.addEventListener('click', () => goToSlide(i));
+    indicatorsContainer.appendChild(indicator);
+  }
+}
+
+function moveSlide(direction) {
+  const slides = document.getElementById('storySlide').children;
+  const totalSlides = slides.length;
+
+  // Hide the current slide
+  slides[currentSlide].classList.remove('active');
+
+  // Move to the next slide
+  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+  // Show the new slide
+  slides[currentSlide].classList.add('active');
+
+  updateIndicators();
+}
+
+function goToSlide(slideIndex) {
+  const slides = document.getElementById('storySlide').children;
+  
+  // Hide the current slide
+  slides[currentSlide].classList.remove('active');
+  
+  // Show the selected slide
+  currentSlide = slideIndex;
+  slides[currentSlide].classList.add('active');
+  
+  updateIndicators();
+}
+
+function updateIndicators() {
+  const indicators = document.querySelectorAll('.story-indicator');
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index === currentSlide);
+  });
+}
+
+// Language Toggle Functionality
+function toggleLanguage() {
+  const toggle = document.getElementById('language-toggle');
+  const lang = toggle.classList.toggle('active') ? 'en' : 'pt';
+
+  document.querySelectorAll('[data-en], [data-pt]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowLeft') {
+    moveSlide(-1);
+  } else if (event.key === 'ArrowRight') {
+    moveSlide(1);
+  }
+});
+
+// Swipe functionality for mobile
+document.addEventListener('touchstart', function(event) {
+  startX = event.touches[0].clientX;
+});
+
+document.addEventListener('touchend', function(event) {
+  const endX = event.changedTouches[0].clientX;
+  if (startX - endX > 50) {
+    moveSlide(1);
+  } else if (endX - startX > 50) {
+    moveSlide(-1);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  initIndicators(); // Initialize indicators on page load
+});
+
+</script>
+
+</body>
+</html>
