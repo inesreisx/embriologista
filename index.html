@@ -1,22 +1,500 @@
 <!DOCTYPE html>
+<html lang="pt">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Embryoana - Embryologist Aspirant</title>
-<meta name="description" content="Passionate about embryology and human reproduction.">
-<meta property="og:description" content="Passionate about embryology and human reproduction." />
-<meta property="og:title" content="Embryoana"/>
-<meta property="og:description" content="Passionate about embryology and human reproduction." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embriologista to be...</title>
+  <meta name="description" content="Passionate about embryology and human reproduction.">
+  <meta property="og:description" content="Passionate about embryology and human reproduction." />
+  <meta property="og:title" content="Embriologista"/>
+  <meta property="og:description" content="Passionate about embryology and human reproduction." />
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYBBRRKYL"></script>
-<script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYBBRRKYL"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-CGYBBRRKYL');
 </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #dca8a4;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: calc(100% - 80px); /* For spacing on both sides */
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar .portugal {
+      color: #282944;
+      background-color: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background-color: transparent; /* No background color when closed */
+    }
+
+    .navbar.active .hamburger {
+      background-color: #282944; /* Background color when menu is open */
+    }
+
+    /* Toggle switch styles */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .flag-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      background-color: #ccc;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .toggle-switch::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle-switch.active {
+      background-color: #6ab9c7;
+    }
+
+    .toggle-switch.active::before {
+      transform: translateX(30px);
+    }
+
+.landing-page {
+  background-image: url('https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/embriologista-background.png?v=1728637578529');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+  color: #fff;
+}
+
+.btn {
+  padding: 15px 30px;
+  background-color: #6ab9c7;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+      margin-top: -50px;
+      margin-left: 60px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+
+
+    .btn:hover {
+      background-color: #57a3b0;
+    }
+
+    .content-section {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: white;
+      text-align: left;
+      margin-left: 13px;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        justify-content: center;
+      }
+
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #282944;
+        padding: 20px;
+        position: absolute;
+        top: 50px;
+        width: 100%; /* Set the width of the menu to 100% */
+        border-radius: 0;
+      }
+
+      .hamburger {
+        display: block;
+        position: fixed;
+        top: 30px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: transparent; /* No background color when closed */
+        color: white;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .navbar.active ul {
+        display: flex;
+      }
+
+      .navbar.active .hamburger {
+        background-color:transparent; /* Background color when menu is open */
+      }
+
+      .navbar a {
+        font-size: 1em;
+        padding: 10px;
+      }
+
+
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+        .btn {
+    display: none; /* Hide the button on screens smaller than 768px */
+  }
+}
+
+      /* Swimming sperm style for mobile view */
+.swimming-sperm {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/DALL_E_2024-10-13_11.24.26_-_A_simple_sperm_illustration__featuring_a_rounded_head_and_a_long__slightly_curved_tail__designed_in_a_minimalist_style_with_smooth__clean_lines._The_s-removebg-preview.png?v=1728811599886'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Different animation for each sperm */
+.sperm1 {
+  top: 10%;
+  left: 0;
+  animation: swimRight 8s infinite linear;
+}
+
+.sperm2 {
+  top: 30%;
+  right: 0;
+  animation: swimLeft 10s infinite linear;
+}
+
+.sperm3 {
+  top: 50%;
+  left: 0;
+  animation: swimRight 7s infinite linear;
+}
+
+.sperm4 {
+  top: 70%;
+  right: 0;
+  animation: swimLeft 9s infinite linear;
+}
+
+.sperm5 {
+  top: 90%;
+  left: 0;
+  animation: swimRight 11s infinite linear;
+}
+
+/* From top to bottom */
+.sperm6 {
+  top: 0;
+  left: 20%;
+  animation: swimDown 9s infinite linear;
+}
+
+.sperm7 {
+  top: 0;
+  left: 80%;
+  animation: swimDown 8s infinite linear;
+}
+
+/* From bottom to top */
+.sperm8 {
+  bottom: 0;
+  left: 10%;
+  animation: swimUp 10s infinite linear;
+}
+
+.sperm9 {
+  bottom: 0;
+  right: 20%;
+  animation: swimUp 7s infinite linear;
+}
+
+/* Diagonal left to right */
+.sperm10 {
+  bottom: 0;
+  left: 0;
+  animation: swimDiagonalRight 12s infinite linear;
+}
+
+/* Diagonal right to left */
+.sperm11 {
+  top: 0;
+  right: 0;
+  animation: swimDiagonalLeft 12s infinite linear;
+}
+
+/* Keyframes for different movements */
+@keyframes swimRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100vw); } /* Moves across the screen */
+}
+
+@keyframes swimLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100vw); } /* Moves across the screen */
+}
+
+@keyframes swimDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); } /* Moves from top to bottom */
+}
+
+@keyframes swimUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); } /* Moves from bottom to top */
+}
+
+@keyframes swimDiagonalRight {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(100vw, -100vh); } /* Diagonal left to right */
+}
+
+@keyframes swimDiagonalLeft {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100vw, 100vh); } /* Diagonal right to left */
+}
+
+/* Show sperms on mobile view */
+@media (max-width: 768px) {
+  .swimming-sperm {
+    display: block;
+  }
+}
+      
+.egg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background-image: url('https://cdn.glitch.global/be997ab1-e706-4e3c-9db7-ddc43ee1e951/happy-egg.png?v=1728811836270'); /* Replace with the correct path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%); /* Center the egg */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .egg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+    
+  </style>
 </head>
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul>
+      <li><a href="#about" class="nav-link" data-en="About" data-pt="Sobre" onclick="showSection('about')">Sobre</a></li>
+      <li><a href="#blog" class="nav-link" data-en="Blog" data-pt="Blog" onclick="showSection('blog')">Blog</a></li>
+      <li><a href="#portugal" class="nav-link portugal" data-en="Fertility in Portugal" data-pt="Fertilidade em Portugal" onclick="showSection('portugal')">Fertilidade em Portugal</a></li>
+      <li class="toggle-container">
+        <span class="flag-icon">🇵🇹</span>
+        <div id="language-toggle" class="toggle-switch" onclick="toggleLanguage()"></div>
+        <span class="flag-icon">🇺🇸</span>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Landing Page Section -->
+<!-- Landing Page Section -->
+<div class="landing-page">
+  <button class="btn" data-en="Get in Touch" data-pt="Entrar em Contato">Entrar em Contato</button>
+</div>
+
+  
+  <!-- Swimming Sperm Animations (Only on Mobile) -->
+  <!-- Egg Image in the Middle -->
+<div class="egg"></div>
+<div class="swimming-sperm sperm1"></div>
+<div class="swimming-sperm sperm2"></div>
+<div class="swimming-sperm sperm3"></div>
+<div class="swimming-sperm sperm4"></div>
+<div class="swimming-sperm sperm5"></div>
+<div class="swimming-sperm sperm6"></div> <!-- From top to bottom -->
+<div class="swimming-sperm sperm7"></div> <!-- From top to bottom -->
+<div class="swimming-sperm sperm8"></div> <!-- From bottom to top -->
+<div class="swimming-sperm sperm9"></div> <!-- From bottom to top -->
+<div class="swimming-sperm sperm10"></div> <!-- Diagonal left to right -->
+<div class="swimming-sperm sperm11"></div> <!-- Diagonal right to left -->
+
+
+  <!-- Footer Section -->
+  <div class="footer">Made with ♥</div>
+
+  <script>
+    let currentLanguage = "pt"; // Set default language to Portuguese
+
+    function toggleLanguage() {
+      // Toggle the language
+      currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+      changeLanguage();
+
+      // Update the toggle switch appearance
+      const languageToggle = document.getElementById("language-toggle");
+      languageToggle.classList.toggle("active", currentLanguage === "en");
+    }
+
+    function changeLanguage() {
+      const allContent = document.querySelectorAll(".content-section");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const button = document.querySelector(".btn");
+
+      // Show or hide content sections based on language
+      allContent.forEach((content) => {
+        if (content.classList.contains(`content-${currentLanguage}`)) {
+          content.classList.add("active");
+        } else {
+          content.classList.remove("active");
+        }
+      });
+
+      // Update navbar text based on selected language
+      navLinks.forEach((link) => {
+        link.textContent = link.getAttribute(`data-${currentLanguage}`);
+      });
+
+      // Update button text based on selected language
+      button.textContent = button.getAttribute(`data-${currentLanguage}`);
+    }
+
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll(".content-section");
+      sections.forEach((section) => {
+        section.style.display = section.id === sectionId ? "block" : "none";
+      });
+    }
+
+    // Set initial language to Portuguese and show the default section
+    document.addEventListener("DOMContentLoaded", () => {
+      changeLanguage();
+      showSection("about");
+    });
+
+    // Toggle Menu for Mobile
+    function toggleMenu() {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("active");
+    }
+  </script>
+
 </body>
 </html>
