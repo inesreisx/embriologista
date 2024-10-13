@@ -68,6 +68,19 @@
       padding: 10px 20px;
     }
 
+    /* Hide the Wallpapers link in the navbar by default */
+.nav-link.wallpapers {
+  display: none;
+}
+
+/* Show the Wallpapers link only on mobile (for screens 768px and smaller) */
+@media (max-width: 768px) {
+  .nav-link.wallpapers {
+    display: block;
+  }
+}
+
+
     /* Hamburger Menu */
     .hamburger {
       display: none;
@@ -406,6 +419,7 @@
       <li><a href="#about" class="nav-link" data-en="About" data-pt="Sobre" onclick="showSection('about')">Sobre</a></li>
       <li><a href="#blog" class="nav-link" data-en="Blog" data-pt="Blog" onclick="showSection('blog')">Blog</a></li>
       <li><a href="#portugal" class="nav-link portugal" data-en="Fertility in Portugal" data-pt="Fertilidade em Portugal" onclick="showSection('portugal')">Fertilidade em Portugal</a></li>
+      <li><a href="#wallpapers" class="nav-link wallpapers" data-en="Wallpapers" data-pt="Wallpapers" onclick="showSection('wallpapers')">Wallpapers</a></li>
       <li class="toggle-container">
         <span class="flag-icon">🇵🇹</span>
         <div id="language-toggle" class="toggle-switch" onclick="toggleLanguage()"></div>
