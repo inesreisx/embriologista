@@ -392,8 +392,15 @@
   }
 }
       
+/* Ensure the navbar and hamburger menu are on top */
+.navbar, .hamburger {
+  z-index: 1000; /* Higher z-index to keep it on top */
+  position: relative; /* Ensure proper positioning */
+}
+
+/* Ensure the egg stays behind the navbar */
 .egg {
-  z-index: 500; /* Lower z-index to ensure it's behind the navbar */
+  z-index: 10; /* Lower z-index to ensure it's behind the navbar */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -410,10 +417,9 @@
   .egg {
     width: 100px;
     height: 100px;
-    z-index: 500; /* Ensure it stays behind the hamburger menu */
+    z-index: 10; /* Ensure it stays behind the navbar */
   }
 }
-
     
   </style>
 </head>
