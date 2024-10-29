@@ -129,14 +129,13 @@
         <center><h1>My experience</h1></center>
         <h2>Lab skills</h2>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Sperm analysis</li>
+        <li>Sperm samples preparation for assisted reproduction techniques</li>
+        <li>Media preparation</li>
+        <li>Identification of COCs</li>
+        <li>Embryo Transfer (TDT, COOK, Frydman)</li>
+        <li>Embryo evalution and monitoring</li>
+        <li>Vitrification and warming of embryos</li>
       </ul>
         <h2>Scientifical research writing</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
@@ -150,62 +149,79 @@
         <span style="font-size: 20px;">&#8593;</span>
     </button>
 
-<script>
-    // Function to toggle between Portuguese and English content
-    const languageToggle = document.getElementById("language-toggle");
-    const blogContent = document.getElementById("blog-content");
-
-    let isPortuguese = true;  // Default language is Portuguese
-
-    languageToggle.addEventListener("click", function() {
-        if (isPortuguese) {
-            languageToggle.textContent = "🇵🇹";  // Switch to Portuguese flag
-            blogContent.innerHTML = `
-                <center><h1>Fertility in Portugal</h1></center>
-                <caption><em>This page is continuously updated.</em></caption>
-                <h2>Overview</h2>
-                <h2>Fertility rate</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-                <h2>Fertility clinics</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-            `;
-        } else {
-            languageToggle.textContent = "🇺🇸";  // Switch to USA flag
-            blogContent.innerHTML = `
-                <center><h1>Fertilidade em Portugal</h1></center>
-                <caption><em>Esta página é atualizada continuamente.</em></caption>
-                <h2>Visão Geral</h2>
-                <h2>Taxa de Fertilidade</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-                <h2>Clínicas de Fertilidade</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
-            `;
-        }
-        isPortuguese = !isPortuguese;  // Toggle the language state
-    });
-
-    // Scroll-to-top button functionality
-    window.onscroll = function() {
-        var button = document.getElementById("scrollToTopButton");
-        var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        if (scrollPos > 200) {
-            button.classList.add("show");
-        } else {
-            button.classList.remove("show");
-        }
-    };
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+    <script>
+        // Function to toggle between Portuguese and English content
+        const languageToggle = document.getElementById("language-toggle");
+        const blogContent = document.getElementById("blog-content");
+    
+        let isPortuguese = true;  // Default language is Portuguese
+    
+        languageToggle.addEventListener("click", function() {
+            if (isPortuguese) {
+                languageToggle.textContent = "🇵🇹";  // Switch to Portuguese flag
+                blogContent.innerHTML = `
+                    <center><h1>My Experience</h1></center>
+                    <h2>Lab Skills</h2>
+                    <ul>
+                        <li>Sperm analysis</li>
+                        <li>Sperm samples preparation for assisted reproduction techniques</li>
+                        <li>Media preparation</li>
+                        <li>Identification of COCs</li>
+                        <li>Embryo Transfer (TDT, COOK, Frydman)</li>
+                        <li>Embryo evaluation and monitoring</li>
+                        <li>Vitrification and warming of embryos</li>
+                    </ul>
+                    <h2>Scientifical Research Writing</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
+                    <h2>Written Papers</h2>
+                    <p>Master Thesis (Grade: 18/20) - "Vitrificação de Embriões: Sistema Fechado vs Sistema Aberto"</p>
+                `;
+            } else {
+                languageToggle.textContent = "🇺🇸";  // Switch to USA flag
+                blogContent.innerHTML = `
+                    <center><h1>Minha Experiência</h1></center>
+                    <h2>Habilidades de Laboratório</h2>
+                    <ul>
+                        <li>Análise de Esperma</li>
+                        <li>Preparação de Amostras de Esperma para Técnicas de Reprodução Assistida</li>
+                        <li>Preparação de Meios de Cultura</li>
+                        <li>Identificação de Complexos Cumulus-Oócito (COCs)</li>
+                        <li>Transferência de Embriões (TDT, COOK, Frydman)</li>
+                        <li>Avaliação e Monitoramento de Embriões</li>
+                        <li>Vitrificação e Descongelamento de Embriões</li>
+                    </ul>
+                    <h2>Escrita de Pesquisa Científica</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac libero nec ligula faucibus scelerisque. Phasellus id metus vel leo feugiat viverra in ut libero.</p>
+                    <h2>Trabalhos Escritos</h2>
+                    <p>Tese de Mestrado (Nota: 18/20) - "Vitrificação de Embriões: Sistema Fechado vs Sistema Aberto"</p>
+                `;
+            }
+            isPortuguese = !isPortuguese;  // Toggle the language state
         });
-    }
-</script>
+    
+        // Scroll-to-top button functionality
+        window.onscroll = function() {
+            var button = document.getElementById("scrollToTopButton");
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            if (scrollPos > 200) {
+                button.classList.add("show");
+            } else {
+                button.classList.remove("show");
+            }
+        };
+    
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+    
 
 </body>
 </html>
