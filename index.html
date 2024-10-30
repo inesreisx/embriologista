@@ -516,13 +516,20 @@
       showSection("about");
     });
 
-    // Toggle Menu for Mobile
-    function toggleMenu() {
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("active");
-    }
+// Toggle Menu for Mobile
+function toggleMenu() {
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("active");
 
-    const languageToggle = document.getElementById("language-toggle");
+  // Add or remove the stop-animations class based on the navbar state
+  if (navbar.classList.contains("active")) {
+    document.body.classList.add("stop-animations");
+  } else {
+    document.body.classList.remove("stop-animations");
+  }
+}
+
+const languageToggle = document.getElementById("language-toggle");
 
 languageToggle.addEventListener('mouseenter', function() {
   document.body.classList.add('stop-animations');
